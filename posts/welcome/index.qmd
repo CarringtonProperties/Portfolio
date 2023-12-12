@@ -1,0 +1,9 @@
+---
+title: "Welcome to My Blog"
+author: "Danielle Carrington"
+date: "2023-12-08"
+categories: [R]
+image: Logo.jpg
+---
+
+Hello, Thank you for visiting my blog!

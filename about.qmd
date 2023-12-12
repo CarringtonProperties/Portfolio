@@ -1,0 +1,26 @@
+---
+title: "About"
+image: Carrington.jpg
+about:
+  template: jolla
+  links: 
+    - icon: github
+      text: Github
+      href: https://github.com/CarringtonProperties/Portfolio.git
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/danielle-carrington-ms-89163929/
+    - icon: resume
+      text: Resume
+      href: Resume.pdf 
+
+---
+
+
+
+```{r}
+```
+About the Author
+Danielle Carrington is a Commercial Property Manager at Haggard Properties and a Business Development Consultant at Carrington Companies, with over five years of experience in the real estate and consulting industry. Danielle has a masters degree in advanced data analytics and has obtained several certifications in business management and analytics.
+
+In her current roles, Danielle Carrington uses her skills in process improvement, contract development, and sales to deliver high-quality solutions and services to my clients and partners. Ms. Carrington has successfully managed and coordinated multiple projects, events, and campaigns, both online and offline, across diverse markets and audiences. Danielle values collaboration, communication, and creativity, and she enjoys working with students, faculty, staff, and other stakeholders to build rapport and trust. Ms. Carrington's mission is to facilitate growth and innovation for the real estate and consulting sectors, using data-driven insights and strategies.

@@ -1,0 +1,82 @@
+---
+title: "First Post"
+author: "Danielle Carrington"
+date: "2023-12-08"
+categories: [hotel, analysis]
+image: article.jpg
+---
+
+This is a post with code.
+
+```{r, echo=TRUE}
+
+# Call the necessary packages
+library(dplyr)
+library(rpart)
+library(ipred)
+library(caret)
+library(ggplot2)
+library(randomForest)
+library(knitr) 
+library(leaps)
+
+client_data<-read.csv("hotelsat.csv", head=TRUE)
+names(client_data)
+```
+
+```{r, echo=TRUE}
+# Check for missing  data 
+missing_vars <-(client_data)
+if (length(missing_vars) < 0) {
+  stop(paste("Null", paste(missing_vars, collapse = ", ")))
+}
+
+# Split the data into training and testing sets 
+train_index <- 1:500
+client_data_train <- client_data[train_index, ]
+client_data_test <- client_data[-train_index, ]
+
+```
+
+```{r, echo=TRUE}
+
+# Group training data by Visit Purpose
+
+BusinessTrips <- client_data_train %>%
+  group_by(visitPurpose = "Business")
+
+summary(BusinessTrips)
+print(min)
+print(max)
+```
+
+```{r, echo=TRUE}
+
+# Histogram using base R plotting
+hist(BusinessTrips$distanceTraveled, main = "Distance Traveled for Business Trips", xlab = "Distance Traveled")
+
+# Load ggplot2 package if not already loaded
+# install.packages("ggplot2")
+library(ggplot2)
+
+# Histogram using ggplot2
+ggplot(BusinessTrips, aes(x = distanceTraveled)) +
+  geom_histogram(binwidth = 100, fill = "skyblue", color = "black") +
+  labs(title = "Distance Traveled for Business Trips", x = "Distance Traveled", y = "Frequency")
+
+# Scatter plot using ggplot2
+ggplot(BusinessTrips, aes(x = distanceTraveled, y = avgRoomSpendPerNight)) +
+  geom_point(color = "blue") +
+  labs(title = "Scatter Plot for Business Trips",
+       x = "Distance Traveled",
+       y = "Average Room Spend Per Night")
+
+
+# Boxplot for avgRoomSpendPerNight in BusinessTrips
+ggplot(BusinessTrips, aes(x = "Business", y = avgRoomSpendPerNight)) +
+  geom_boxplot(fill = "skyblue", color = "black") +
+  labs(title = "Boxplot for Average Room Spend Per Night (Business Trips)",
+       x = "Visit Purpose",
+       y = "Average Room Spend Per Night")
+
+```
